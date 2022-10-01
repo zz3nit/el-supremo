@@ -11,16 +11,6 @@ img {
     margin-left: 20px  ;
 }
 
-/* a {
-    font-size: x-large;
-    font-weight: 700;
-    text-decoration: none;
-    padding: 20px;
-    color: #c01725 ;
-}
-
-a */
-
 a {
     text-decoration: none;
     font-size: x-large;
@@ -64,6 +54,13 @@ a:hover::after {
 	transform: scale(1,1);
 }
 
+
+
 .iconShop {
-    margin-right: 50px;
+    margin-right: 125px;
+	
+}
+
+.iconShop:hover {
+	color: #ff0015;
 }

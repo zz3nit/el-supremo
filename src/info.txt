@@ -6,3 +6,11 @@ Componentes Funcionales /*funciones*/
 Recordar <></> o div para darle estilos.
 4-Se debe exportar la funcion! (export,(default normal),
  o hay formas  export sobre el componente {App, y otrocomponente}, sino normal).
+
+
+
+ Componentes.
+ -Props
+ -States
+ -Ciclos de vida
+ -Metodos del ciclo de vida

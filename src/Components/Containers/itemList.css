@@ -1,0 +1,7 @@
+.tituloSaludo {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #0cc9a7 ;
+    font-size: 3em;
+    -webkit-text-stroke: 2px black;
+}
