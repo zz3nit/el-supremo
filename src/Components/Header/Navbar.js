@@ -1,6 +1,6 @@
 import React from "react";
 import './Navbar.css';
-import logo from '../../assets/logo-elsupremo.png';
+import logo from '../../assets/logo-supremo2.png';
 import { CartWidget } from "./CartWidget";
 
 

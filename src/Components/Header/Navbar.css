@@ -1,21 +1,23 @@
 header {
     display: flex;
     justify-content: space-between;
-    background-color: #E2F661;
+    background-color: #f3c42a ;
     align-items: center;
     
 }
 
 img {
     width: 170px;
-    margin-left: 20px  ;
+    margin-left: 20px ;
+	padding: 5px;
 }
 
 a {
     text-decoration: none;
-    font-size: x-large;
+    font-size: 2em;
     font-weight: 700;
-	color: #c01725;
+	-webkit-text-stroke: 2px black;
+	color:#0cc9a7;
     margin: 20px;
     padding: 20px;
 	transition: all 0.5s;
@@ -46,7 +48,7 @@ a::after {
 	z-index: 1;
 	opacity: 0;
 	transition: all 0.3s;
-	border: 1px solid #c01725;
+	border: 1px solid black;
 	transform: scale(1.2,1.2);
 }
 a:hover::after {
@@ -62,5 +64,5 @@ a:hover::after {
 }
 
 .iconShop:hover {
-	color: #ff0015;
+	color:#0af8cc;
 }
