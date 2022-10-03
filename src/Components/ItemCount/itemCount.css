@@ -1,0 +1,35 @@
+.estiloContador {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.estiloCompra {
+    display: flex;
+    flex-direction:row;
+    gap: 1rem;
+}
+
+button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 12px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: rgb(8, 8, 8);
+    background-color:#0cc9a7;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px #999;
+  }
+  
+  button:hover {background-color:#108b75}
+  
+  button:active {
+    background-color:#0c6353;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }

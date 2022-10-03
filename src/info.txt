@@ -14,3 +14,9 @@ Recordar <></> o div para darle estilos.
  -States
  -Ciclos de vida
  -Metodos del ciclo de vida
+
+ hooks
+ -siempre comienzan con use
+ -siempre se declaran dentro de un Componente
+ -son  siempre funciones
+ -no se pueden declarar en condicionales es decir dentro de un if()
