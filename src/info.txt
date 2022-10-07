@@ -20,3 +20,42 @@ Recordar <></> o div para darle estilos.
  -siempre se declaran dentro de un Componente
  -son  siempre funciones
  -no se pueden declarar en condicionales es decir dentro de un if()
+
+ Ciclo de vida de Componentes y Metodos
+
+ -Montaje(Mount)
+    -constructor
+    -render(mostrar en pantalla)
+    -componentDidMount
+
+ -Actualizacion(Update)
+    -constructor
+    -render
+    -componentDidUpdate
+
+ -Desmontaje(Unmount)
+    -componentWillUnMount(chatbox de ayuda como ejemplo para este caso)
+
+
+ useEffect
+ con esta configuracion el useEffect se ejecuta solo en el Montaje
+ useEffect (()=>{
+    //bloque de codigo
+ },[]);   
+
+  useEffect
+ con esta configuracion el useEffect se ejecuta en el montaje y cuando detecta cambios en 
+ valores del array de valores   
+ useEffect (()=>{
+    //bloque de codigo
+ },[valores]); 
+
+
+
+
+
+
+
+
+
+

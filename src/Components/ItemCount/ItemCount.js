@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import imagen from '../../assets/demonslayer.jpg'
 import  './itemCount.css'
 
 
@@ -20,11 +21,12 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         
     }
 
-
+{/* <ItemCount stock={10} initial={1} onAdd={onAdd} /> */}
 
 return (
     <div className="estiloContador">
     <h1>Contador productos</h1>
+    <img src={imagen} alt="" />
     <div className="estiloCompra">
     <button onClick={restarcantidad}>-</button>
     <h2>{cantidad}</h2>

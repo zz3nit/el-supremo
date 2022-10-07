@@ -7,7 +7,7 @@ import { ItemListContainer } from "./Containers/ItemListContainer";
 
 
 const App = () => {
-  const mensaje = "Estas por descubrir la magia de la lectura"
+  const mensaje = "Pagina en construccion"
   return (
     <>
     <Navbar/>
