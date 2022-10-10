@@ -6,22 +6,20 @@ import Typography from '@mui/material/Typography';
 import './item.css'
 
 const Item = ({item}) => {
-    console.log(item);
     return (
         <div className="displayTarjeta">
             <Card className="tarjetaBody">
             <img className="tarjetaImagen" src={item.imagen} alt="" />
             <CardContent>
-                <Typography className="tarjetaletras" gutterBottom variant="h5" component="div">
+                <Typography className="tarjeta__titulo" gutterBottom variant="h5" component="div">
                 {item.titulo}
                 </Typography>
-                <Typography className="tarjetaletras" variant="body2" color="text.secondary">
-                {item.descripcion}
+                <Typography  variant="body2" color="text.secondary">
                 </Typography>
-                <p className="tarjetaletras">Precio: ${item.precio}</p>
+                <p className="tarjeta__precio">Precio: ${item.precio}</p>
             </CardContent>
             <CardActions>
-                <button className="tarjetaBoton" size="small">Ver Detalle</button>
+                <p className="tarjeta__detalle" size="small">Ver Detalle</p>
             </CardActions>
             </Card>
             </div>

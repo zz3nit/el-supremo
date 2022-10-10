@@ -22,9 +22,15 @@ main{
     margin: 1rem;
 }
 
-.tarjetaletras {
+.tarjeta__titulo {
     display: flex;
     flex-wrap: wrap;
+    font-weight: 500;
+    
+}
+
+.tarjeta__precio {
+    color: blue;
 }
 
 button{

@@ -1,0 +1,28 @@
+.detalle__card {
+    background-color: rgb(255, 255, 255);
+    max-width: 75%;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    border-radius: 50px;
+}
+ 
+.detalle__imagen{
+    width: 800px;
+    padding: 1rem;
+}
+
+.detalle__descripcion{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+}
+
+.detalle__precio {
+    margin-bottom: 1rem;
+    font-size: larger;
+    font-weight: 500;
+    color: rgb(50, 20, 220);
+    
+}
+
