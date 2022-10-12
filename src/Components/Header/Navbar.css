@@ -7,12 +7,12 @@ header {
 }
 
 img {
-    width: 170px;
+    width: 160px;
     margin-left: 20px ;
 	padding: 5px;
 }
 
-a {
+.link__navbar {
     text-decoration: none;
     font-size: 2em;
     font-weight: 700;
@@ -23,7 +23,7 @@ a {
 	transition: all 0.5s;
 	position: relative;
 }
-a::before {
+.link__navbar::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -34,11 +34,11 @@ a::before {
 	background-color: #c01725(255,255,255,0.1);
 	transition: all 0.3s;
 }
-a:hover::before {
+.link__navbar:hover::before {
 	opacity: 0 ;
 	transform: scale(0.5,0.5);
 }
-a::after {
+.link__navbar::after {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -51,7 +51,7 @@ a::after {
 	border: 1px solid black;
 	transform: scale(1.2,1.2);
 }
-a:hover::after {
+.link__navbar:hover::after {
 	opacity: 1;
 	transform: scale(1,1);
 }

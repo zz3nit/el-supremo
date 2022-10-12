@@ -11,15 +11,19 @@ main{
     align-items: center;
 }
 
+
 .tarjetaImagen{
     max-width: 50%;
     margin-left: 25%;
+    
 }
 
 .tarjetaBody {
+    height: 500px;
     display: grid;
     align-items: center;
     margin: 1rem;
+
 }
 
 .tarjeta__titulo {

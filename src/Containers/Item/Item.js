@@ -3,11 +3,13 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+
 import './item.css'
+import  {Link} from "react-router-dom"
 
 const Item = ({item}) => {
     return (
-        <div className="displayTarjeta">
+        <div className="tarjeta__display">
             <Card className="tarjetaBody">
             <img className="tarjetaImagen" src={item.imagen} alt="" />
             <CardContent>
@@ -19,7 +21,9 @@ const Item = ({item}) => {
                 <p className="tarjeta__precio">Precio: ${item.precio}</p>
             </CardContent>
             <CardActions>
-                <p className="tarjeta__detalle" size="small">Ver Detalle</p>
+                <Link to={"/producto/id"}>
+                <button className="tarjeta__detalle" size="small">Ver Detalle</button>
+                </Link>
             </CardActions>
             </Card>
             </div>

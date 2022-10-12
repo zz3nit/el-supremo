@@ -2,6 +2,10 @@ import React from "react";
 import './App.css';
 import Navbar from "./Components/Header/Navbar";
 import { ItemListContainer } from "./Containers/ItemListContainer";
+import Cart from "./Containers/CartView/Cartview";
+import ItemDetailContainer from "./Containers/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 
 
@@ -10,10 +14,22 @@ const App = () => {
   const mensaje = "Pagina en construccion"
   return (
     <>
+    <BrowserRouter>
     <Navbar/>
-    <ItemListContainer greeting = {mensaje}/>
+    <Routes>
+      <Route path="/" element={<ItemListContainer greeting = {mensaje}/>}/>
+      <Route path="/categoria/:id" element={<ItemListContainer greeting = {mensaje}/>} />
+      <Route path="/producto/:id" element={<ItemDetailContainer/>}/>
+      <Route path="/cart" element={<Cart/>}/>
+    </Routes>
+    </BrowserRouter>
     </>
+    
   );
 };
 
 export default App
+
+
+/* <ItemListContainer greeting = {mensaje}/>
+    <ItemDetailContainer/>*/
