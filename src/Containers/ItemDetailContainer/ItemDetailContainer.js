@@ -149,13 +149,12 @@ const ItemDetailContainer = () => {
     useEffect(()=>{
         obtenerDatos 
         .then(data => setListaProducto(data.find(producto=>{
-            return producto.id === id})))
-        .catch((error)=>{
-            console.log("error");
-        });
+            return producto.id === id
+        })))
+        
     },[id])
-
-    console.log(id);
+    
+    console.log(listaProducto);
 
 
 
