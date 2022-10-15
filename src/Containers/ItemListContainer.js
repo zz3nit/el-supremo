@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import  './itemListContainer.css'
 import Itemlist from "./Itemlist/Itemlist";
 import { useParams } from "react-router-dom";
+import {RaceBy} from '@uiball/loaders'
 
 
 // import { ItemCount } from "../Components/ItemCount/ItemCount";
@@ -132,39 +133,40 @@ const productoStock = [
 
 ]
 
-const obtenerDatos = new Promise((resolve, reject) => {
-    setTimeout(()=>{
-        resolve(productoStock);
-    }, 2000)
-    
-})
+
+const obtenerDatos= () => { 
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve(productoStock);
+        },2000)
+        
+})}
 
 
 export const ItemListContainer = ({greeting}) => {
 
-    const {id} = useParams();
-    console.log(id);
+    const {idCategoria} = useParams();
+    console.log(idCategoria);
  
 
     const [listaProductos, setListaProductos] = useState([]);
     const [loader, setLoader] = useState(true);
 
     useEffect(()=>{
-        obtenerDatos
+        obtenerDatos()
         .then((data)=>{
-            if(id){
-                setListaProductos(data.filter(productos=>productos.categoria===id))
+            if(idCategoria){
+                setListaProductos(data.filter(productos=>productos.categoria===idCategoria))
             }else {
-                 setListaProductos(data)
+                setListaProductos(data)
             }
         })
         .catch((error)=>{
             console.log("error");
         })
-        .finally(
-            setLoader(false)
-        )
-    },[id])
+        .finally(()=> setLoader(false))
+
+    },[idCategoria])
     
     // const onAdd = (cantidad) => {
     //     console.log(`Agregaste ${cantidad} producto/s` )
@@ -175,7 +177,7 @@ export const ItemListContainer = ({greeting}) => {
         <>
         <h1 className="tituloSaludo">{greeting}</h1>
         {<>
-            {loader ? <h1>Cargando...</h1>:<Itemlist listaProductos={listaProductos}/>} 
+            {loader ? <main className="loader__itemList"><RaceBy zise ={200} lineWeight={5} speed={1.5} color={"#0cc9a7"} /></main>:<Itemlist listaProductos={listaProductos}/>} 
         </> }
             
         </>

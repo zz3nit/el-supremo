@@ -15,14 +15,21 @@ main{
 .tarjetaImagen{
     max-width: 50%;
     margin-left: 25%;
-    
+    transition: 1s ease-out;
 }
 
-.tarjetaBody {
+.tarjetaImagen:hover{
+   scale: 1.2;
+   transform: rotateY(180deg);
+   
+}
+
+.tarjeta__body {
     height: 500px;
     display: grid;
     align-items: center;
     margin: 1rem;
+    overflow: hidden;
 
 }
 

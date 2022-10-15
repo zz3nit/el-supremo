@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import {ItemDetail} from "../ItemDetail/ItemDetail";
+import './ItemDetailContainer.css'
+import {Jelly} from '@uiball/loaders'
 
 
 
@@ -131,37 +133,42 @@ const productoStock = [
 ]
 
 
-const obtenerDatos = new Promise((resolve, reject) => {
-    resolve(productoStock);
-    
-})
+const obtenerDatos= () => { 
+    return new Promise((resolve, reject) => {
+        setTimeout(()=>{
+            resolve(productoStock);
+        }, 4000)
+        
+})}
+
 
 
 
 const ItemDetailContainer = () => {
 
-    
+    const [product, setProducto] = useState({});
+    const [loading, setLoading] = useState(true)
 
-    const [listaProducto, setListaProducto] = useState({});
-
-    const {id} = useParams();
+    const {idProducto} = useParams();
 
     useEffect(()=>{
-        obtenerDatos 
-        .then(data => setListaProducto(data.find(producto=>{
-            return producto.id === id
+        obtenerDatos ()
+        .then(data => setProducto(data.find(producto=>{
+            return producto.id === parseInt(idProducto)
         })))
+        .finally(() =>setLoading(false)) ;
         
-    },[id])
+    },[idProducto])
     
-    console.log(listaProducto);
+   
 
 
 
     return(
-        <div>
-           <ItemDetail listaProducto={listaProducto}/>
+        <>
+        <div> {loading ? <h1><Jelly size={100} speed={0.9} color="#0cc9a7"/></h1>:<ItemDetail product={product}/>}
         </div>
+        </>
     )
 }
 

@@ -1,18 +1,16 @@
 import React from "react";
 import './ItemDetail.css'
 
-const ItemDetail = ({listaProducto}) =>{
-    console.log(listaProducto);
+export const ItemDetail = (props) =>{
     return(
         <div className="detalle__card">
             <div className="detalle__display">
-            <h1>{listaProducto.titulo}</h1>
-            <img className="detalle__imagen" src={listaProducto.imagen} alt="" />
-            <p className="detalle__descripcion">{listaProducto.descripcion}</p>
-            <p className="detalle__precio">Precio: ${listaProducto.precio}</p>
+            <img className="detalle__imagen" src={props.product.imagen} alt="" />
             </div>
             <div>
-            <h2>Bloque en construccion</h2>
+            <h2>{props.product.titulo}</h2>
+            <p className="detalle__descripcion">{props.product.descripcion}</p>
+            <p className="detalle__precio">Precio: ${props.product.precio}</p>
             <button>Comprar</button>
             </div>
         </div>
@@ -20,4 +18,3 @@ const ItemDetail = ({listaProducto}) =>{
     )
 }
 
-export default ItemDetail
