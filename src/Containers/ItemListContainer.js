@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import  './itemListContainer.css'
 import Itemlist from "./Itemlist/Itemlist";
 import { useParams } from "react-router-dom";
-import {RaceBy} from '@uiball/loaders'
+import {JellyTriangle} from '@uiball/loaders'
 
 
 // import { ItemCount } from "../Components/ItemCount/ItemCount";
@@ -138,7 +138,7 @@ const obtenerDatos= () => {
     return new Promise((resolve, reject) => {
         setTimeout(()=>{
             resolve(productoStock);
-        },2000)
+        },3000)
         
 })}
 
@@ -168,16 +168,14 @@ export const ItemListContainer = ({greeting}) => {
 
     },[idCategoria])
     
-    // const onAdd = (cantidad) => {
-    //     console.log(`Agregaste ${cantidad} producto/s` )
-    // };
+   
     
 
     return (
         <>
         <h1 className="tituloSaludo">{greeting}</h1>
         {<>
-            {loader ? <main className="loader__itemList"><RaceBy zise ={200} lineWeight={5} speed={1.5} color={"#0cc9a7"} /></main>:<Itemlist listaProductos={listaProductos}/>} 
+            {loader ? <main className="loader__itemList"><JellyTriangle zise ={100} lineWeight={5} speed={1.5} color={"#0cc9a7"} /></main>:<Itemlist listaProductos={listaProductos}/>} 
         </> }
             
         </>

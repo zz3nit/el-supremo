@@ -160,13 +160,14 @@ const ItemDetailContainer = () => {
         
     },[idProducto])
     
-   
+
+
 
 
 
     return(
         <>
-        <div> {loading ? <h1><Jelly size={100} speed={0.9} color="#0cc9a7"/></h1>:<ItemDetail product={product}/>}
+        <div> {loading ? <section className="loader__itemdetail"><Jelly size={100} speed={0.9} color="#0cc9a7"/></section>:<ItemDetail product={product}/>}
         </div>
         </>
     )

@@ -7,3 +7,9 @@
     -webkit-text-stroke: 2px black;
 }
 
+.loader__itemList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
