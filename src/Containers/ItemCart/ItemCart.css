@@ -1,0 +1,32 @@
+.item__cart {
+  background-color: rgba(255, 255, 255, 0.863);
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  margin: 1rem auto;
+  gap: 1rem;
+  padding: 1rem;
+
+}
+
+.item__img {
+    width: 200px;
+    margin-right: 1rem;
+}
+
+
+.boton__borrar {
+    height: 50px;
+    color: rgb(8, 8, 8);
+    background-color: red;
+  }
+  
+  .boton__borrar:hover {background-color:red}
+  
+  .boton__borrar:active {
+    background-color:rgb(145, 6, 6);
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }

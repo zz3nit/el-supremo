@@ -23,6 +23,7 @@ img {
 	transition: all 0.5s;
 	position: relative;
 }
+
 .link__navbar::before {
 	content: '';
 	position: absolute;
@@ -58,11 +59,29 @@ img {
 
 
 
-.iconShop {
+.icon__shop {
     margin-right: 125px;
-	
+	text-decoration: none;
+
 }
 
 .iconShop:hover {
 	color:#0af8cc;
 }
+
+.icon__shop::after{
+	position: absolute;
+}
+
+.numero__carrito{
+	font-size: 20px;
+    background:#0cc9a600;
+	border-radius: 50px;
+	font-weight: 700;
+    color: rgb(0, 0, 0);
+    padding: 0 8px;
+    vertical-align: top;
+}
+
+
+
