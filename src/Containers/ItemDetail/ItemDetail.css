@@ -46,6 +46,7 @@
 .detalle__compra{
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     margin: 1rem;
     gap: 1.5rem;

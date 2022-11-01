@@ -156,10 +156,13 @@ export const ItemListContainer = ({greeting}) => {
 
 
     const productosCollection = collection(dataBase, 'productos')
-    // const q = query(productosCollection, where('categoria', '==', idCategoria ))
+    //const q = query(productosCollection, where('categoria', '==', idCategoria ))
+    const q = idCategoria ? query(productosCollection, where('categoria', '==', idCategoria )) : productosCollection
+
 
     useEffect(()=> {
-        getDocs(productosCollection)
+        console.log('useEffect');
+        getDocs(q)
         .then((result) => { 
             const listaStock = result.docs.map((items) => {
                 return {
@@ -175,7 +178,7 @@ export const ItemListContainer = ({greeting}) => {
         .finally(()=> setLoader(false))
 
 
-    },[idCategoria, productosCollection])
+    },[idCategoria])
     
 
     

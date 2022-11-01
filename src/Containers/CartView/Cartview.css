@@ -1,7 +1,10 @@
 .vista__carrito{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
+  
 
 }
 
@@ -9,10 +12,57 @@
     text-align: center;
 }
 
-.boton__vaciar {
+
+
+  .cart__compra{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.863);
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .detalle__titulo{
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: larger;
+    
+  }
+
+  .item__cart {
+    background-color: rgba(255, 255, 255, 0.863);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    margin: 0 auto;
+    gap: 1rem;
+    padding: 1rem;
+  
+  }
+  
+  .item__img {
+      width: 200px;
+      margin-right: 1rem;
+  }
+
+  .vista__botones {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .boton__vaciar {
     display: inline-block;
     padding: 15px 25px;
-    font-size: 12px;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
     text-align: center;	
     text-decoration: none;
@@ -32,9 +82,48 @@
     transform: translateY(4px);
   }
 
-  .detalle__titulo{
-    text-decoration: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  .boton__registro{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 15px;
     font-weight: 700;
-    font-size: larger;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    color: rgb(8, 8, 8);
+    background-color: rgb(9, 255, 0);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px #999;
   }
+
+  
+  .boton__borrar {
+      height: 50px;
+      color: rgb(8, 8, 8);
+      background-color: red;
+    }
+    
+    .boton__borrar:hover {background-color:red}
+    
+    .boton__borrar:active {
+      background-color:rgb(145, 6, 6);
+      box-shadow: 0 2px #666;
+      transform: translateY(4px);
+    }
+
+    .modal__vista {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  }
+  
+  .modal__formulario {
+      display: flex;
+      flex-direction: column;
+      margin: 1rem;
+  }
+  
+
+

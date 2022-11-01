@@ -11,7 +11,7 @@ export const ItemDetail = ({product}) => {
 
     const onAdd = (cantidad) => {
         agregarItem (product, cantidad)
-    setMostrarItemCount(false);
+        setMostrarItemCount(false);
 };
 
 return (

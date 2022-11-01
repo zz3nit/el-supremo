@@ -6,6 +6,7 @@ header {
     
 }
 
+
 img {
     width: 160px;
     margin-left: 20px ;
@@ -74,6 +75,7 @@ img {
 }
 
 .numero__carrito{
+	text-decoration: none;
 	font-size: 20px;
     background:#0cc9a600;
 	border-radius: 50px;

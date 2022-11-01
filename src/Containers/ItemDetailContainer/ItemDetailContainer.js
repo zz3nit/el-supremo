@@ -176,14 +176,6 @@ const ItemDetailContainer = () => {
     })
     .finally(() => setLoading(false));
 
-
-    // obtenerDatos()
-    //   .then((data) => setProducto(data.find((producto) => {
-    //         return producto.id === idProducto;
-    //       })
-    //     )
-    //   )
-    //   .finally(() => setLoading(false));
   }, [idProducto]);
 
   return (
