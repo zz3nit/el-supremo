@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useCartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -7,7 +7,7 @@ import { collection, addDoc, serverTimestamp, doc, updateDoc } from "firebase/fi
 import Box from "@mui/material/Box";
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
-import {ToastContainer, toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import './Cartview.css'
 import { TextField, Typography } from "@mui/material";
 
@@ -44,16 +44,11 @@ const Cart = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-   
-    
-    const [datosUsuario, setDatosUsuario] = useState({
-        nombre: '',
-        correo: '',
-    })
 
- 
+    
 
     const finalizarCompra = () => {
+        if (datosUsuario.nombre !== "" && datosUsuario.correo !== "" ){
         const ventasCollection = collection(dataBase, 'ventas')
         addDoc(ventasCollection,{
             datosUsuario,
@@ -65,14 +60,54 @@ const Cart = () => {
             console.log(result);
         })
         .finally(vaciarCarrito)
-    }   
+    } else {
+        toast.error('COMPLETE TODOS LOS CAMPOS', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "colored",
+            });
+    } 
+    } 
 
-    const handleInputChange = (e) => {
-        setDatosUsuario({
-            ...datosUsuario, 
-            [e.target.name] : e.target.value
-        })
+    const valoresIniciales = { nombre:"", correo:""}
+    const [datosUsuario, setDatosUsuario] = useState(valoresIniciales)
+    const [erroresDatos, setErroresDatos] = useState({})
+    const [isSubmit, setIsSubmit] = useState(false);
+ 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setDatosUsuario({ ...datosUsuario, [name]: value });
+      };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setErroresDatos(validacion(datosUsuario));
+        setIsSubmit(true)
     }
+    useEffect(() => {
+        console.log(erroresDatos);
+        if (Object.keys(erroresDatos).length === 0 && isSubmit) {
+          console.log(datosUsuario);
+        }
+      }, [erroresDatos]);
+
+    const validacion = (valores) => {
+        const errores = {};
+        const regex =  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        if (!valores.nombre) {
+            errores.nombre = "Escribe tu nombre completo!";
+        }
+        if (!valores.correo) {
+            errores.correo = "Correo es requerido!";
+        } else if (!regex.test(valores.correo)) {
+            errores.correo = "Este no es un correo valido!";
+        }
+        return errores;
+    };
 
     return (
         <>
@@ -115,7 +150,7 @@ const Cart = () => {
                                             <h5>Productos: {cantidad}</h5>
                                             <h5>Total: ${total}</h5>
                                             <h6>Completa este formulario para finalizar</h6>
-                                            <form onSubmit={finalizarCompra}>
+                                        <form onSubmit={handleSubmit}>
                                             <Typography/>
                                             <TextField
                                                 helperText="Ingrese su nombre"
@@ -123,8 +158,9 @@ const Cart = () => {
                                                 type="text"
                                                 label="Nombre"
                                                 value={datosUsuario.nombre}
-                                                onChange={handleInputChange}
+                                                onChange={handleChange}
                                                 />
+                                                <p>{erroresDatos.nombre}</p>
                                             <TextField
                                                 helperText="Ingrese su Email"
                                                 name="correo"
@@ -132,8 +168,10 @@ const Cart = () => {
                                                 label="Correo"
                                                 required
                                                 value={datosUsuario.correo}
-                                                onChange={handleInputChange}
+                                                onChange={handleChange}
                                                 />
+                                                <p>{erroresDatos.correo}</p>
+                                                <button type="submit">Registrate</button>
                                                 <Button sx={styleButton} onClick={finalizarCompra}>Finalizar Compra</Button>
                                         </form>
                                     </div>
