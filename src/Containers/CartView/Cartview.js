@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState } from "react";
 import { useCartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
@@ -44,6 +44,7 @@ const Cart = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const [ordenId, setOrdenId] = useState('')
 
     
 
@@ -57,7 +58,7 @@ const Cart = () => {
             fechaDeCompra: serverTimestamp()
         })
         .then(result=>{
-            console.log(result);
+            setOrdenId(result.id);
         })
         .finally(vaciarCarrito)
     } else {
@@ -82,18 +83,18 @@ const Cart = () => {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setDatosUsuario({ ...datosUsuario, [name]: value });
-      };
+    };
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         setErroresDatos(validacion(datosUsuario));
-        setIsSubmit(true)
-    }
-    useEffect(() => {
-        console.log(erroresDatos);
-        if (Object.keys(erroresDatos).length === 0 && isSubmit) {
-          console.log(datosUsuario);
+        if(Object.keys(erroresDatos).length===0){
+            setIsSubmit(true)
         }
-      }, [erroresDatos]);
+        setErroresDatos(validacion(datosUsuario));
+       
+    }
+
 
     const validacion = (valores) => {
         const errores = {};
@@ -112,9 +113,12 @@ const Cart = () => {
     return (
         <>
             {carrito.length === 0 ? (
-                <div>
+                <div className="carrito__final">
                 <h1>No hay elementos en el carrito aun, puedes volver a <Link to="/">COMPRAR</Link>
                 </h1>
+                <h2>
+                    {ordenId && <p>Este es el id de su compra:<span className="orden__id"> {ordenId} </span></p>}
+                </h2>
                 </div>
             ) : (
                 <>
@@ -171,8 +175,8 @@ const Cart = () => {
                                                 onChange={handleChange}
                                                 />
                                                 <p>{erroresDatos.correo}</p>
-                                                <button type="submit">Registrate</button>
-                                                <Button sx={styleButton} onClick={finalizarCompra}>Finalizar Compra</Button>
+                                                {!isSubmit&&<button type="submit">Registrate</button>}
+                                                {isSubmit&&<Button sx={styleButton} onClick={finalizarCompra}>Finalizar Compra</Button>}
                                         </form>
                                     </div>
                                 </Box>

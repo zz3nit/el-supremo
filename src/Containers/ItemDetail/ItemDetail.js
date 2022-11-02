@@ -3,6 +3,7 @@ import "./ItemDetail.css";
 import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../Context/CartContext";
+import { toast } from "react-toastify";
 
 export const ItemDetail = ({product}) => {
     
@@ -12,6 +13,16 @@ export const ItemDetail = ({product}) => {
     const onAdd = (cantidad) => {
         agregarItem (product, cantidad)
         setMostrarItemCount(false);
+        toast.success('agregaste productos', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: "light",
+            });
 };
 
 return (
@@ -25,10 +36,15 @@ return (
         <p className="detalle__precio">Precio: ${product.precio}</p>
         {mostrarItemCount ? 
         <ItemCount stock={product.stock} initial={1} onAdd={onAdd} />
-        : 
+        :
+        <>
         <Link to={'/cart'}>
-        <button>Comprar</button>
+            <button>Comprar</button>
         </Link>
+        <Link to={'/'} >
+            <button>Seguir comprando</button>
+        </Link>
+        </>
         }
     </div>
     </div>

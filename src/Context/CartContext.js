@@ -5,14 +5,19 @@ const CartContext = createContext()
 
 export const useCartContext = () => useContext(CartContext);
 
+const storageCarrito = () => {
+    const carritoLista = localStorage.getItem('listaCarrito')
+    return carritoLista ? JSON.parse(carritoLista) : []
+}
+
 export const CartProvider = ({children}) => {
-    const [carrito, setCarrito] = useState([]);
+    const [carrito, setCarrito] = useState(storageCarrito);
     const [cantidad, setCantidad] = useState(0)
     const [total, setTotal] = useState (0)
 
 
     useEffect(()=>{
-        console.log(carrito);
+        localStorage.setItem('listaCarrito', JSON.stringify(carrito))
         let cantidad = 0;
         let totalC = 0;
         carrito.forEach(item => {

@@ -8,6 +8,21 @@
 
 }
 
+.carrito__final {
+  display: flex;
+  margin: 3rem auto;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  background-color: rgba(243, 240, 240, 0.623);
+}
+
+.orden__id {
+  color: #161af3 ;
+}
+
 .titulo__carrito{
     text-align: center;
 }
