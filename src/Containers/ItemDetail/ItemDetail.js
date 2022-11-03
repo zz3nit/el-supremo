@@ -15,7 +15,7 @@ export const ItemDetail = ({product}) => {
         setMostrarItemCount(false);
         toast.success('agregaste productos', {
             position: "top-right",
-            autoClose: 5000,
+            autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

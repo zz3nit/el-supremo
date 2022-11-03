@@ -34,11 +34,6 @@ const styleButton = {
 
 }
 
-
-
-
-
-
 const Cart = () => {
     const { carrito, total, cantidad, vaciarCarrito, borrarItem } = useCartContext()
     const [open, setOpen] = React.useState(false);
@@ -59,8 +54,21 @@ const Cart = () => {
         })
         .then(result=>{
             setOrdenId(result.id);
+            
         })
+        
         .finally(vaciarCarrito)
+        toast.success('Compra exitosa! no se olvide de guardar su id', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+
     } else {
         toast.error('COMPLETE TODOS LOS CAMPOS', {
             position: "top-right",
@@ -74,6 +82,16 @@ const Cart = () => {
             });
     } 
     } 
+
+    const actualizarStock = () => {
+        console.log("hola");
+        carrito.forEach = (item => {
+           const cambioStock = doc(dataBase, "productos", item.id )
+           updateDoc(cambioStock,{stock: item.stock - item.cantidad}) 
+        });
+        
+    }
+
 
     const valoresIniciales = { nombre:"", correo:""}
     const [datosUsuario, setDatosUsuario] = useState(valoresIniciales)
@@ -93,8 +111,9 @@ const Cart = () => {
         }
         setErroresDatos(validacion(datosUsuario));
        
-    }
+    };
 
+  
 
     const validacion = (valores) => {
         const errores = {};
@@ -176,7 +195,7 @@ const Cart = () => {
                                                 />
                                                 <p>{erroresDatos.correo}</p>
                                                 {!isSubmit&&<button type="submit">Registrate</button>}
-                                                {isSubmit&&<Button sx={styleButton} onClick={finalizarCompra}>Finalizar Compra</Button>}
+                                                {isSubmit&&<Button sx={styleButton} onClick={actualizarStock}>Finalizar Compra</Button>}
                                         </form>
                                     </div>
                                 </Box>
