@@ -3,6 +3,7 @@ header {
     justify-content: space-between;
     background-color: #f3c42a ;
     align-items: center;
+	margin-bottom: 10px;
     
 }
 
@@ -61,17 +62,20 @@ img {
 
 
 .icon__shop {
-    margin-right: 125px;
+    margin-right: 75px;
 	text-decoration: none;
 
 }
 
 .iconShop:hover {
 	color:#0af8cc;
+	text-decoration: none;
 }
 
 .icon__shop::after{
 	position: absolute;
+	
+
 }
 
 .numero__carrito{
@@ -80,7 +84,7 @@ img {
     background:#0cc9a600;
 	border-radius: 50px;
 	font-weight: 700;
-    color: rgb(0, 0, 0);
+    color:#0cc9a7;
     padding: 0 8px;
     vertical-align: top;
 }

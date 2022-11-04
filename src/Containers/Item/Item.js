@@ -8,6 +8,7 @@ import  {Link} from "react-router-dom"
 
 const Item = ({item}) => {
     return (
+        
         <div className="tarjeta__display">
             <Card className="tarjeta__body">
             <img className="tarjetaImagen" src={item.imagen} alt="" />

@@ -56,9 +56,9 @@ const Cart = () => {
             setOrdenId(result.id);
             
         })
-        
-        .finally(vaciarCarrito)
-        toast.success('Compra exitosa! no se olvide de guardar su id', {
+        .finally(actualizarStock)
+        vaciarCarrito()
+        toast.success('Compra exitosa! Generando ID de compra no se olvide de guardarlo', {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -68,7 +68,6 @@ const Cart = () => {
             progress: undefined,
             theme: "dark",
             });
-
     } else {
         toast.error('COMPLETE TODOS LOS CAMPOS', {
             position: "top-right",
@@ -85,9 +84,9 @@ const Cart = () => {
 
     const actualizarStock = () => {
         console.log("hola");
-        carrito.forEach = (item => {
-           const cambioStock = doc(dataBase, "productos", item.id )
-           updateDoc(cambioStock,{stock: item.stock - item.cantidad}) 
+        carrito.forEach(item => {
+        const cambioStock = doc(dataBase, "productos", item.id )
+        updateDoc(cambioStock,{stock: item.stock - item.cantidad}) 
         });
         
     }
@@ -97,7 +96,7 @@ const Cart = () => {
     const [datosUsuario, setDatosUsuario] = useState(valoresIniciales)
     const [erroresDatos, setErroresDatos] = useState({})
     const [isSubmit, setIsSubmit] = useState(false);
- 
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setDatosUsuario({ ...datosUsuario, [name]: value });
@@ -110,10 +109,9 @@ const Cart = () => {
             setIsSubmit(true)
         }
         setErroresDatos(validacion(datosUsuario));
-       
     };
 
-  
+
 
     const validacion = (valores) => {
         const errores = {};
@@ -195,7 +193,7 @@ const Cart = () => {
                                                 />
                                                 <p>{erroresDatos.correo}</p>
                                                 {!isSubmit&&<button type="submit">Registrate</button>}
-                                                {isSubmit&&<Button sx={styleButton} onClick={actualizarStock}>Finalizar Compra</Button>}
+                                                {isSubmit&&<Button sx={styleButton} onClick={finalizarCompra}>Finalizar Compra</Button>}
                                         </form>
                                     </div>
                                 </Box>

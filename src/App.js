@@ -7,13 +7,14 @@ import ItemDetailContainer from "./Containers/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./Context/CartContext";
 import { ToastContainer, } from "react-toastify";
+import { Footer } from "./Components/Footer/Footer";
 
 
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () => {
-  const mensaje = "Bienvenidos a El Supremo"
+  const mensaje = "El Supremo"
   return (
     <>
     <BrowserRouter>
@@ -28,6 +29,7 @@ const App = () => {
       </Routes>
       </CartProvider>
     </BrowserRouter>
+    <Footer/> 
     <ToastContainer/>
     </>
     

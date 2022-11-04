@@ -3,6 +3,7 @@ import './Navbar.css';
 import logo from '../../assets/logo-supremo2.png';
 import { CartWidget } from "./CartWidget";
 import { Link, NavLink } from "react-router-dom";
+import { OrdenesId } from "../../Containers/Ordenes/OrdenesId";
 
 
 const Navbar = () => {
@@ -27,6 +28,7 @@ const Navbar = () => {
                 }
             </ul>
             </nav>
+            <OrdenesId/>
             <Link to={"/cart"}>
                 <CartWidget/>
             </Link>
