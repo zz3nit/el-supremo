@@ -8,9 +8,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./Context/CartContext";
 import { ToastContainer, } from "react-toastify";
 import { Footer } from "./Components/Footer/Footer";
-
+import { Ordenes } from "./Containers/Ordenes/OrdenView";
 
 import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const App = () => {
@@ -25,11 +26,13 @@ const App = () => {
         <Route path="/categoria/:idCategoria" element={<ItemListContainer greeting = {mensaje}/>} />
         <Route path="/producto/:idProducto" element={<ItemDetailContainer/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/ordenes" element={<Ordenes/>}/>
         <Route path="*" element={<ItemListContainer/>}/>
       </Routes>
+      <Footer/> 
       </CartProvider>
     </BrowserRouter>
-    <Footer/> 
+    
     <ToastContainer/>
     </>
     

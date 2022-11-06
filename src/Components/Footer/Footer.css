@@ -49,6 +49,28 @@ footer{
     align-items: center;
 }
 
+.footer-container-search {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-search {
+    text-decoration: none;
+    font-size: x-large;
+    color: aliceblue;
+    border: solid;
+    transition: 1s ease-in-out;
+    
+}
+
+.footer-search:hover {
+    color: orange;
+    scale: 1.2;
+}
+
 .footer-content-container{
     display: flex;
     justify-content: center;

@@ -3,6 +3,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import logo from '../../assets/logo-supremo2.png';
 import { pink } from "@mui/material/colors";
+import { Link } from "react-router-dom";
+import ContentPasteSearchIcon from '@mui/icons-material/ContentPasteSearch';
 import './Footer.css'
 
 
@@ -12,10 +14,11 @@ export const Footer = () =>{
         <>
         <footer>
         <div className="footer-container">
-            <div className="footer-content-container">
+            <div className="footer-container-search">
                 <a href="https://www.instagram.com/elsupremocomics/">
                 <img className="footer-logo" src={logo} href="" alt="logo de la empresa El Supremo" />
                 </a>
+                <Link  className="footer-search" to="/ordenes"><ContentPasteSearchIcon/>Buscar orden</Link>
                 <span className="footer-info"></span>
             </div>
             <div className="footer-menus">
