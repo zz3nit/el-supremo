@@ -3,7 +3,7 @@ import { useCartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { dataBase } from "../../firebase/firebase";
-import { collection, addDoc, serverTimestamp, doc, updateDoc } from "firebase/firestore";
+import { collection, addDoc, doc, updateDoc } from "firebase/firestore";
 import Box from "@mui/material/Box";
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
