@@ -1,6 +1,6 @@
 # El Supremo Web
 
-[ir a la web](https://app.netlify.com/sites/elsupremo/settings/general)
+[ir a la web](https://elsupremo.netlify.app/)
 
 ___
 
