@@ -13,7 +13,7 @@ export const ItemDetail = ({product}) => {
     const onAdd = (cantidad) => {
         agregarItem (product, cantidad)
         setMostrarItemCount(false);
-        toast.success('agregaste productos', {
+        toast.success('agregaste producto/s',  {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -21,7 +21,7 @@ export const ItemDetail = ({product}) => {
             pauseOnHover: true,
             draggable: false,
             progress: undefined,
-            theme: "light",
+            theme: "colored",
             });
 };
 

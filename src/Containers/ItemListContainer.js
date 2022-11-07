@@ -21,7 +21,6 @@ export const ItemListContainer = ({greeting}) => {
 
 
     useEffect(()=> {
-        console.log('useEffect');
         getDocs(q)
         .then((result) => { 
             const listaStock = result.docs.map((items) => {
