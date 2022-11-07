@@ -1,5 +1,7 @@
 # El Supremo Web
 
+[ir a la web]()
+
 ___
 
 ##### E-commerce de ventas de mangas, comics, y productos varios
@@ -44,25 +46,27 @@ a traves del numero de id._
 
 _Tanto la lista de productos, con su respectivo stock disponible, como las ventas realizas, son almacenadas en la base de datos de Firebase._
 
+_Proyecto responsive para q se pueda ver desde Celular inclusivo_
+
 ___
 
-#####Instalacion 
+##### Instalacion 
 
 1. Clonar el repositorio
 
->git clone https://github.com/zz3nit/el-supremo
+> git clone https://github.com/zz3nit/el-supremo
 
 2. Ir al repositorio del proyecto
 
->cd el-supremo
+> cd el-supremo
 
 3. Instalar las dependencias
 
->npm i
+> npm i
 
 4. Iniciar servidor local
 
->npm start
+> npm start
 
 
 

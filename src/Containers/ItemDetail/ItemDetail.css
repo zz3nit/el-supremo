@@ -57,3 +57,23 @@
     justify-content: center;
     width: 50%;
 }
+
+
+@media (max-width: 768px){
+    .detalle__card {
+        background-color: rgba(255, 255, 255, 0.856);
+        max-width: 100%;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        overflow:hidden;
+    }
+
+    .detalle__imagen{
+        width: 200px;
+        transition: 1s ease-in;
+    
+    }
+
+ }

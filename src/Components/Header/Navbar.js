@@ -19,8 +19,10 @@ const Navbar = () => {
             <Link src={logo} to={"/"}>
             <img src={logo} alt="logo de la empresa El Supremo" />
             </Link>
-            <nav>
-            <ul>
+            <input type="checkbox" className="input__nav" id="nav-toggle"/>
+            <label htmlFor="nav-toggle"><i className="ri-menu-line"></i></label>
+            <nav className="nav__links">
+            <ul >
                 {
                     listaCategorias.map((categoria)=>{
                         return <NavLink className="link__navbar" key={categoria.id} to={categoria.ruta}>{categoria.nombre}</NavLink> 

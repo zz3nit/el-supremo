@@ -1,5 +1,6 @@
 header {
     display: flex;
+	flex-wrap: wrap;
     justify-content: space-between;
     background-color: #f3c42a ;
     align-items: center;
@@ -60,6 +61,16 @@ img {
 }
 
 
+.input__nav{
+    display: none;
+}
+#nav__toggle{
+    display: none;
+}
+.navbar label{
+    display: none;
+}
+
 
 .icon__shop {
     margin-right: 75px;
@@ -90,4 +101,33 @@ img {
 }
 
 
+@media screen and (max-width: 600px){
+	.navbar__menu{
+	   width: 100%;
+	   max-height: 0;
+	   overflow: hidden;
+	}
+	.link__navbar {
+		display: flex;
+		flex-direction: column;
+		margin: 0;
+		gap: 1rem;
+	}
+	
+   .navbar label{
+	   display: inline-flex;
+	   align-items: center;
+	   cursor: pointer;
+   }
+   #nav-toggle:checked ~ .navbar__menu{
+	   max-height: 100%;
+   
+   }
+   }
+   @media screen and (max-width: 590px){
+   
+	.navbar__logo{
+		display:none
+	}
+	}
 

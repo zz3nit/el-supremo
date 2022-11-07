@@ -40,17 +40,18 @@ const Cart = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const [ordenId, setOrdenId] = useState('')
-
+   
     
 
     const finalizarCompra = () => {
         if (datosUsuario.nombre !== "" && datosUsuario.correo !== "" ){
         const ventasCollection = collection(dataBase, 'ventas')
+        const fechaDeCompra = new Date().toLocaleDateString()
         addDoc(ventasCollection,{
             datosUsuario,
             item: carrito,
             total,
-            fechaDeCompra: serverTimestamp()
+            fechaDeCompra: fechaDeCompra
         })
         .then(result=>{
             setOrdenId(result.id);
@@ -83,7 +84,6 @@ const Cart = () => {
     } 
 
     const actualizarStock = () => {
-        console.log("hola");
         carrito.forEach(item => {
         const cambioStock = doc(dataBase, "productos", item.id )
         updateDoc(cambioStock,{stock: item.stock - item.cantidad}) 

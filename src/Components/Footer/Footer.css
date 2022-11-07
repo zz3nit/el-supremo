@@ -110,9 +110,17 @@ footer{
 
     .footer-content-container{
         width: 100%;
-        padding: 2rem 0;
         border-bottom: 1px solid #2A2A2A;
         justify-content: center;
+        align-items: center;
+    }
+
+    .footer-container-search {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -127,7 +135,6 @@ footer{
     .footer-menus{
         width: 100%;
         display: flex;
-        justify-content: space-between;
         align-items: flex-start;
         border-bottom: 1px solid #2A2A2A;
     }

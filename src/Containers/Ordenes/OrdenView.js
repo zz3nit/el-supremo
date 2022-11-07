@@ -15,9 +15,9 @@ const generadorSchema = yup.object().shape({
 
 export const Ordenes= () => {
     const {register, handleSubmit, formState: {errors}} = useForm ({resolver: yupResolver(generadorSchema)});
-    const [ordenDatos, setOrdenDatos] = useState({})
+    const [ordenDatos, setOrdenDatos] = useState([])
     const [loading, setLoading] = useState()
-
+   
 
     const onSubmit = (data) => {
         setLoading(true)
@@ -65,7 +65,8 @@ export const Ordenes= () => {
                     progress: undefined,
                     theme: "colored",
                     toastId: "find-error",
-                })
+                    
+                })   
             }
         })
         .finally(
@@ -75,7 +76,7 @@ export const Ordenes= () => {
         )
     }
 
-
+    
 
     return(
         <>
@@ -92,11 +93,12 @@ export const Ordenes= () => {
                 <div className='orden-vista'>
                     <h2>Orden de compra</h2>
                     <p className='orden-texto'>ID: {ordenDatos.id}</p>
-                    <p className='orden-texto'>Cantidad: {ordenDatos.cantidad}</p>
-                    <p className='orden-texto'>Fecha de la compra: {ordenDatos.date}</p>
+                    <p className='orden-texto'>Fecha de la compra: {ordenDatos.fechaDeCompra}</p>
                     <p className='orden-texto'>Total gastado: ${ordenDatos.total}</p>
                 </div>
+                
             }
+            
         </>
     )
 }

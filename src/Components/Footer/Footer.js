@@ -15,9 +15,7 @@ export const Footer = () =>{
         <footer>
         <div className="footer-container">
             <div className="footer-container-search">
-                <a href="https://www.instagram.com/elsupremocomics/">
                 <img className="footer-logo" src={logo} href="" alt="logo de la empresa El Supremo" />
-                </a>
                 <Link  className="footer-search" to="/ordenes"><ContentPasteSearchIcon/>Buscar orden</Link>
                 <span className="footer-info"></span>
             </div>
